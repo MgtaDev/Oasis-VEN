@@ -129,14 +129,18 @@ const CarouselWrapper = styled(Slider)`
     @media screen and (max-width: 800px) {
       top: -31%;
     }
-    @media screen and (max-width: 7680px) {
+    @media screen and (max-width: 768px) {
       object-fit: cover;
+      width: 768px;
+      height: 700px;
     }
     @media screen and (max-width: 600px) {
       top: -34%;
     }
     @media screen and (max-width: 430px) {
       top: -40%;
+      width: 430px;
+      height: 700px;
     }
     @media screen and (max-width: 200px) {
       top: -45%;
@@ -395,7 +399,7 @@ function App() {
       <div class="container snipcss0-4-491-492">
         <div class="row snipcss0-5-492-493">
           <div class="col-12 col-sm-10 col-xxl-12 snipcss0-6-493-494">
-            <h2 class="text-center w-[110%] -ml-[5%] text-[#005c99] mt-8 lg:-mt-[20%] md:-mt-[20%] min-[1500px]:-mt-[40%]  headline snipcss0-7-494-495 mb-10 text-5xl">
+            <h2 class="text-center w-[110%] -ml-[5%] text-[#005c99] mt-48 lg:-mt-[40%] md:-mt-[30%] min-[1500px]:-mt-[40%]  headline snipcss0-7-494-495 mb-10 text-5xl">
             LLENARTE DE VIDA ES SIMPLE <br /> 
             HIDRATATE CON OASIS
             </h2>
