@@ -2,17 +2,23 @@
 import React from 'react';
 import './App.css'
 
+
 // Imagenes
 import oasisLogo from './assets/OasisLogo.jpeg'
 import oasisBanner from './assets/Oasis5.jpeg'
-import products from './assets/hieloyagua.png'
-import Hielo from './assets/Hielo.jpeg'
 import WhatsappIcon from './assets/social.png'
-import banner2 from './assets/Oasis5.jpeg'
-import instagramLogo from './assets/icons8-instagram-48.png'
-import GmailLogo from './assets/icons8-gmail-logo-48.png'
-import oasisImg1 from './assets/Oasis1.jpeg'
-import oasisImg5 from './assets/Oasis2.jpeg'
+import banner1 from './assets/banner1.png'
+import banner2 from './assets/Banner2.png'
+import banner3 from './assets/Banner3.png'
+import eventos5 from './assets/eventos5.jpg'
+import bottleImg1l from './assets/Botella1L.png'
+import bottleImg5l from './assets/Botella5L.png'
+import bottleImg330ml from './assets/Botella330ml.png'
+import bottleImg600ml from './assets/Botella600ml.png'
+import eventos1 from './assets/eventos1.jpg'
+import eventos2 from './assets/eventos2.jpg'
+import eventos3 from './assets/eventos3.jpg'
+import eventos4 from './assets/eventos4.jpg'
 
 
 // Librerias
@@ -28,14 +34,28 @@ import ReactCardSlider from 'react-card-slider-component';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 
-
 const slides = [
-  {image: banner2 ,title:"Agua Mineral 336ml",description:"This is a second description"},
-  {image: banner2 ,title:"Agua Mineral 1L",description:"This is a second description",},
-  {image: Hielo ,title:"Cilindros de Hielo",description:"This is a third description",},
-  {image: banner2 ,title:"Cilindros de Helado",description:"This is a fourth description"},
+  {
+    image: eventos1,
+    title: "21k Margarita 2024",
+    description: "16 de Marzo de 2024",
+    className: "image-container",
+  },
+  {
+    image: eventos5,
+    title: "360 Margarita Trail",
+    description: "2 de Diciembre de 2023",
+    className: "image-container",
+  },
+  {
+    image: eventos3,
+    title: "Torneo Christmas Cup 2023",
+    description: "13 de Diciembre del 2023",
+    className: "image-container",
+  },
 
-]
+];
+
 // Estilos del carrousel con Styled-Components
 const CarouselContainer = styled.div`
   position: relative;
@@ -96,9 +116,31 @@ const CarouselWrapper = styled(Slider)`
   .slick-slide img {
     width: 100%;
     height: 100%;
-    object-fit:cover;
+    object-fit:contain;
+    position: relative;
+    top:-19%;
     transition: all 0.5s ease;
- 
+    @media screen and (max-width: 1200px) {
+      top: -25%;
+    }
+    @media screen and (max-width: 1000px) {
+      top: -28%;
+    }
+    @media screen and (max-width: 800px) {
+      top: -31%;
+    }
+    @media screen and (max-width: 7680px) {
+      object-fit: cover;
+    }
+    @media screen and (max-width: 600px) {
+      top: -34%;
+    }
+    @media screen and (max-width: 430px) {
+      top: -40%;
+    }
+    @media screen and (max-width: 200px) {
+      top: -45%;
+    }
   }
 `;
 
@@ -149,7 +191,7 @@ const DotsContainer = styled.div`
 
 function App() {
   const sendWhatsappMessage = () => {
-    window.open("https://wa.me/584121968978", "_blank")
+    window.open("https://wa.me/584122030851", "_blank")
   };
   const [ref, inView ] = useInView();
   console.log(inView);
@@ -243,9 +285,9 @@ function App() {
           <Menu styles={styles} width={ '300px' } right>
             <a id="1" className="menu-item underline" href="#Home">Home</a>
             <a id="2" className="menu-item underline" href="#Productos">Productos</a>
-            <a id="3" className="menu-item underline" href="#Nosotros">Sobre Nosotros</a>
+            <a id="3" className="menu-item underline" href="#About">Sobre Nosotros</a>
             <a id="4" className="menu-item underline" href="#Eventos">Eventos</a>
-            <a id="5" className="menu-item underline" href="#Contacto">Contacto</a>
+            <a id="5" className="menu-item underline" href="#Contact">Contacto</a>
             <a id="5" className="menu-item underline" href="#Social">Social</a>
           </Menu>
           </div>
@@ -276,100 +318,36 @@ function App() {
                 <a href="#Productos" class="!text-gray-950 hover:!text-[#005c99] transition-3s ease-in-out snipcss0-9-98-99 snipcss0-6-94-95">
                  Productos
                 </a>
-                <div class="submenu snipcss0-9-98-100 snipcss0-6-94-96">
-                  <ul class="child snipcss0-10-100-101 snipcss0-7-96-97">
-                    <li class="snipcss0-11-101-102 snipcss0-8-97-98">
-                      <a class="snipcss0-12-102-103 snipcss0-9-98-99">
-                      <img src='https://www.volvic.co.uk/fileadmin/user_upload/gb/pageicons/icon_naturelle_02.svg' className='h-[50px] w-[50px] -mb-3  ml-5 -mt-6' alt="" />
-                        <span class="-mb-6 -mt-4 snipcss0-13-103-105 snipcss0-10-99-101">
-                          Agua mineral
-                        </span>
-                      </a>
-                    </li>
-                    <li class="snipcss0-11-101-106 snipcss0-8-97-102">
-                      <a class="snipcss0-12-106-107 snipcss0-9-102-103">
-                      <img src='https://www.volvic.co.uk/fileadmin/user_upload/gb/pageicons/icon_packaging_01.svg' className='h-[50px]  w-[50px] ml-7 -mb-3 -mt-6' alt="" />
-                        <span class="-mb-6 -mt-4 snipcss0-13-107-109 snipcss0-10-103-105">
-                          Cilindros de Hielo
-                        </span>
-                      </a>
-                    </li>
-                   
-                  </ul>
-                </div>
+            
               </li>
 
               {/* Sobre Nosotros */}
               <li class="snipcss0-8-97-98 snipcss0-5-93-94">
-                <a href="#Nosotros" class="!text-gray-950 hover:!text-[#005c99] transition-3s ease-in-out snipcss0-9-98-99 snipcss0-6-94-95">
+                <a href="#About" class="!text-gray-950 hover:!text-[#005c99] transition-3s ease-in-out snipcss0-9-98-99 snipcss0-6-94-95">
                   Nosotros
                 </a>
               </li>
 
                {/* Eventos */}
               <li class="snipcss0-8-97-114 snipcss0-5-93-110">
-                <a class="!text-gray-950  hover:!text-[#005c99] transition-3s ease-in-out  snipcss0-9-114-115 snipcss0-6-110-111">
+                <a href='#Eventos' class="!text-gray-950  hover:!text-[#005c99] transition-3s ease-in-out  snipcss0-9-114-115 snipcss0-6-110-111">
                Eventos
                 </a>
-                <div class="submenu snipcss0-9-114-116 snipcss0-6-110-112">
-                  <ul class="child snipcss0-10-116-117 snipcss0-7-112-113">
-                    <li class="snipcss0-11-117-118 snipcss0-8-113-114">
-                      <a class="snipcss0-12-118-119 snipcss0-9-114-115">
-                      <img src='https://www.volvic.co.uk/fileadmin/user_upload/gb/pageicons/icon_naturelle_02.svg' className='h-[50px] w-[50px] ml-5 -mt-6' alt="" />
-                        <span class="-mb-6 -mt-4 snipcss0-13-119-121 snipcss0-10-115-117">
-                        CTNE
-                        </span>
-                      </a>
-                    </li>
-                    <li class="snipcss0-11-117-122 snipcss0-8-113-118">
-                      <a class="snipcss0-12-122-123 snipcss0-9-118-119">
-                      <img src='https://www.volvic.co.uk/fileadmin/user_upload/gb/pageicons/icon_naturelle_02.svg' className='h-[50px] w-[50px] ml-5 -mt-6' alt="" />
-                        <span class="-mb-6 -mt-4 snipcss0-13-123-125 snipcss0-10-119-121">
-                         Margarita Runners
-                        </span>
-                      </a>
-                    </li>
-                    
-                  
-                  </ul>
-                </div>
+            
               </li>
 
               {/* Contacto */}
               <li class="snipcss0-8-97-138 snipcss0-5-93-134">
-                <a class="!text-gray-950  hover:!text-[#005c99] transition-3s ease-in-out ] snipcss0-9-138-139 snipcss0-6-134-135">
+                <a href='#Contact' class="!text-gray-950  hover:!text-[#005c99] transition-3s ease-in-out ] snipcss0-9-138-139 snipcss0-6-134-135">
                   Contacto
                 </a>
-                <div class="submenu snipcss0-9-138-140 snipcss0-6-134-136">
-                  <ul class="child snipcss0-10-140-141 snipcss0-7-136-137">
-                    <li class="snipcss0-11-141-142 snipcss0-8-137-138">
-                      <a class="snipcss0-12-142-143 snipcss0-9-138-139">
-                      <img src={instagramLogo} className='h-[50px] w-[50px] ml-2 -mb-3 -mt-6' alt="" />
-                        <span class="-mb-6 -mt-4 snipcss0-13-143-145 snipcss0-10-139-141">
-                   Instagram
-                        </span>
-                      </a>
-                    </li>
-                    <li class="snipcss0-11-141-146 snipcss0-8-137-142">
-                      <a class="snipcss0-12-146-147 snipcss0-9-142-143">
-                      <img src={WhatsappIcon} className='h-10 w-10 ml-3 -mb-3 -mt-6' alt="" />
-                        <span class="-mb-8 snipcss0-13-147-149 snipcss0-10-143-145">
-                          Whatsapp
-                        </span>
-                      </a>
-                    </li>
-                    <li class="snipcss0-11-141-150 snipcss0-8-137-146">
-                      <a class="snipcss0-12-150-151 snipcss0-9-146-147">
-                      <img src={GmailLogo} className='h-[45px] w-[45px] -mb-3 -mt-4' alt="" />
-                        <span class="-mb-6  snipcss0-13-151-153 snipcss0-10-147-149">
-                          Gmail
-                        </span>
-                      </a>
-                    </li>
-                   
-                    
-                  </ul>
-                </div>
+             
+              </li>
+              <li class="snipcss0-8-97-138 snipcss0-5-93-134">
+                <a href='#Social' class="!text-gray-950  hover:!text-[#005c99] transition-3s ease-in-out ] snipcss0-9-138-139 snipcss0-6-134-135">
+                  Social
+                </a>
+             
               </li>
               
             </ul>
@@ -384,11 +362,11 @@ function App() {
   <div class="page-content snipcss0-2-2-217">
 
     {/* BANNER */}
-    <animated.div id='Home' style={animatedStyle1}>
+    <animated.div id='Home' className='scroll-mt-[8rem]' style={animatedStyle1}>
     <CarouselContainer>
       <CarouselWrapper {...settings}>
         <div className='h-[530px]' >
-        <img src={oasisImg5} alt="banner-img-1" />
+        <img src={banner1} alt="banner-img-1" />
         </div>
 
         <div className='h-[530px]' >
@@ -396,22 +374,15 @@ function App() {
         </div>
 
         <div className='h-[530px]' >
-        <img  src={oasisImg1} alt="banner-img-3" />
+        <img  src={banner3} alt="banner-img-3" />
         </div>
       </CarouselWrapper>
     </CarouselContainer>
     </animated.div>
 
     {/* NUESTROS PRODUCTOS */}
-    <InView threshold={0.25}>
-    {({ref, inView})=>(
-    <motion.div 
-    ref={ref}
-    initial={{ y: 0, opacity:0 }}
-    animate={ inView ? { y: -100, opacity: 1} : {y:0}}
-    transition={{duration: 0.8}}
-    >
-    <div id="c1946" class="frame frame-default frame-type-list frame-layout-0 frame-space-after-large in-view snipcss0-3-217-337">
+
+    <div id="Productos" class="frame scroll-mt-[8rem] lg:scroll-mt-[16rem] frame-default frame-type-list frame-layout-0 frame-space-after-large in-view snipcss0-3-217-337">
       <section class="product-overview-slider snipcss0-4-337-338">
         <div class="container snipcss0-5-338-339">
           <div class="row snipcss0-6-339-340">
@@ -424,9 +395,9 @@ function App() {
       <div class="container snipcss0-4-491-492">
         <div class="row snipcss0-5-492-493">
           <div class="col-12 col-sm-10 col-xxl-12 snipcss0-6-493-494">
-            <h2 class="text-center w-[110%] -ml-[5%] text-[#005c99] max-[375px]:mt-[150%] max-[290px]:mt-[180%]  max-[430px]:mt-[100%] max-[720px]:mt-[50%] max-[680px]:mt-[80%] max-[520px]:mt-[80%] max-[612px]:mt-[80%] max-[630px]:mt-[80%] max-[1200px]:mt-[25%]   max-[1026px]:mt-[20%]  max-[580px]:mt-[80%]  max-[768px]:mt-[80%] max-[992px]:mt-[40%]  headline snipcss0-7-494-495 mb-10 text-5xl">
+            <h2 class="text-center w-[110%] -ml-[5%] text-[#005c99] mt-8 lg:-mt-[20%] md:-mt-[20%] min-[1500px]:-mt-[40%]  headline snipcss0-7-494-495 mb-10 text-5xl">
             LLENARTE DE VIDA ES SIMPLE <br /> 
-            HIDRÀTATE CON OASIS
+            HIDRATATE CON OASIS
             </h2>
             <InView threshold={0.25}>
             {({ref, inView})=>(
@@ -441,16 +412,20 @@ function App() {
            showArrows={false}
            className='max-[420px]:h-[500px] text-center max-[420px]:mb-[60%] mb-[25%]'>
                 <div>
-                    <img src={products}  />
-                    <p className="legend">Agua minereal 366ml</p>
-                </div>
-                <div>
-                    <img src={products} />
+                    <img src={bottleImg1l}  />
                     <p className="legend">Agua minereal 1l</p>
                 </div>
                 <div>
-                    <img src={products} />
-                    <p className="legend">Cilindros de Hielo</p>
+                    <img src={bottleImg5l} />
+                    <p className="legend">Agua minereal 5l</p>
+                </div>
+                <div>
+                    <img src={bottleImg600ml} />
+                    <p className="legend">Agua mineral 600ml</p>
+                </div>
+                <div>
+                    <img src={bottleImg330ml} />
+                    <p className="legend">Agua mineral 330ml</p>
                 </div>
             </Carousel>
             <InView threshold={0.25}>
@@ -492,9 +467,7 @@ function App() {
     </div>
     </section>
     </div>
-    </motion.div>
-    )}
-    </InView>
+
   
     {/*POR QUE ESCOJERNOS */}
     <InView threshold={0.25}>
@@ -506,14 +479,14 @@ function App() {
     transition={{duration: 0.8}}
     id=''
     >
-    <section id='About' class="image-text -mt-[20%] scroll-mt-[10rem]  snipcss0-3-217-357">
+    <section id='About' class="image-text -mt-[10%]  scroll-mt-[10rem] lg:scroll-mt-[10rem]  snipcss0-3-217-357">
       <div class="container snipcss0-4-357-358">
         <div class="row snipcss0-5-358-359">
           <div class="col-12 col-sm-10 col-xxl-12 snipcss0-6-359-360">
             <div class="image-text-element in-view img-right snipcss0-7-360-361">
               <div class="row snipcss0-8-361-362">
                 <div class="col-12 col-md-6  image no-header snipcss0-9-362-363">
-                  <img src={oasisBanner} width="880" className='h-[90%]' height="880" alt="" class="snipcss0-10-363-364"></img>
+                  <img src={oasisBanner} width="880" className='h-[80%]' height="880" alt="" class="snipcss0-10-363-364"></img>
                 </div>
                 <div class="col-12 col-md-6 text order-md-1 snipcss0-9-362-365">
                 <InView threshold={0.25}>
@@ -525,8 +498,8 @@ function App() {
                 transition={{duration: 0.8}}
                 id=''
                 >
-                  <h3 class="text-5xl text-[#005c99] max-[480px]:text-4xl max-[480px]:-mt-[8%] max-[420px]:text-center headline snipcss0-8-380-381">
-                  DESAFÌA TUS LIMITES CUIDANDO AL MÀXIMO TU CUERPO
+                  <h3 class="text-5xl text-[#005c99] max-[480px]:text-4xl max-[480px]:-mt-[8%] max-[430px]:-mt-[2%] max-[420px]:text-center headline snipcss0-8-380-381">
+                  DESAFÍA TUS LIMITES CUIDANDO AL MÁXIMO TU CUERPO
                   </h3>  
               </motion.div>  
                 )}
@@ -544,21 +517,21 @@ function App() {
                   <div className='mt-[30%]'>
                   <p class="snipcss0-10-365-367">
                   ¡La prioridad es tu bienestar! En Oasis abrazamos la posibilidad de acompañarte
-                  a sacar tu màximo potencial, inspiràndote a vivir nuevas experiencias y cultivar
-                  un estilo de vida cada vez màs saludable, siempre cuidando tu cuerpo con la
-                  hidrataciòn perfecta.
+                  a sacar tu maximo potencial, inspirandote a vivir nuevas experiencias y cultivar
+                  un estilo de vida cada vez mas saludable, siempre cuidando tu cuerpo con la
+                  hidratacion perfecta.
                   </p>
                   <p class="snipcss0-10-365-368">
-                  ¡Atrèvete a vivir eso que tanto sueñas! Nosotros soñamos con extraer, purificar, y
+                  ¡Atrevete a vivir eso que tanto sueñas! Nosotros soñamos con extraer, purificar, y
                   producir agua desde la Isla de Margarita para toda Venezuela, y hoy es una gran
                   realidad la presencia de Oasis agua & hielo en las rutinas y entrenamientos de
                   miles de atletas.
                   </p>
                   <p class="snipcss0-10-365-369">
-                  Tambièn estamos en las fotos de tus vacaciones, paseos, dìas de playa, piscina o
+                  Tambien estamos en las fotos de tus vacaciones, paseos, dias de playa, piscina o
                   montaña con familiares y amigos, por que el packing y la imagen de las botellas
-                  Oasis es 100% atrevido, divertido e inspirador. Reutilìzalas, consèrvalas y
-                  desèchalas en el lugar adecuado ¡Gracias!
+                  Oasis es 100% atrevido, divertido e inspirador. Reutilìzalas, conservalas y
+                  desechalas en el lugar adecuado ¡Gracias!
                   </p>
                  
                   </div>
@@ -633,7 +606,7 @@ function App() {
    
     
     {/* NUESTROS EVENTOS*/}
-    <InView id='Eventos' threshold={0.25}>
+    <InView threshold={0.25}>
     {({ref, inView})=>(
     <motion.div 
     ref={ref}
@@ -641,16 +614,16 @@ function App() {
     animate={ inView ? { x: 0, opacity: 1} : {x:-100}}
     transition={{duration: 0.8}}
     >
-    <section id='NuestrosProductos' class="product-slider scroll-mt-[12rem]  in-view snipcss0-3-217-376">
+    <section id='Eventos' class="product-slider scroll-mt-[2rem] md:scroll-mt-[8rem]  in-view snipcss0-3-217-376">
       <div class="container container-wide snipcss0-4-376-377">
         <div class="row snipcss0-5-377-378">
           <div class="col-lg-4 col-xxl-3 snipcss0-6-378-379">
             <div class="product-teaser-text snipcss0-7-379-380">
               <div class="text-5xl text-[#005c99] ml-8 m-2 max-[480px]:text-center max-[480px]:ml-0 headline snipcss0-8-380-381">
-                Nuestros Eventos
+              Eventos
               </div>
               <p class="ml-8 max-[480px]:ml-0 max-[480px]:!text-3xl  snipcss0-8-380-382">
-               Conoce nuestra variedad de productos, y fascinate con nuestra calidad.
+              Como amantes de las actividades deportivas promovemos y patrocinamos eventos con instituciones y marcas aliadas que nos permiten estar más cerca de ti.
               </p>
               <p class="text-left ml-8 max-[480px]:ml-0 cta-link-wrap-button snipcss0-8-380-383">
                 <a href="/products" class="button primary js-track-link-event snipcss0-9-383-384">
@@ -681,7 +654,7 @@ function App() {
                 transition={{duration: 0.8}}
                 id=''
                 >
-    <section id='Contacto' class="text in-view snipcss0-3-217-491">
+    <section id='Contact' class="text scroll-mt-[4rem] in-view snipcss0-3-217-491">
       <div class="container snipcss0-4-491-492">
         <div class="row snipcss0-5-492-493">
           <div class="col-12 col-sm-10 col-xxl-12 snipcss0-6-493-494">
@@ -695,7 +668,7 @@ function App() {
                 id=''
                 >
             <h2 class="text-center text-[#005c99]  snipcss0-7-494-495 text-5xl max-[480px]:text-4xl mb-10">
-            PRODUCTOS CON CALIDAD DE FABRICACIÒN PLASCAN <br /><br /> Oasis Agua & Hielo
+            PRODUCTOS CON CALIDAD DE FABRICACION PLASCAN <br /><br /> Oasis Agua & Hielo
             </h2>
             </motion.div>
           )}
@@ -714,8 +687,8 @@ function App() {
                   Los productos Oasis (agua - hielo) son una inmersión de frescura, 100%
                   naturales, fabricados por Plascan en la Isla de Margarita, con agua
                   extraída de pozos profundos, ubicados en El Valle del Espíritu Santo.
-                  Gracias a los rigurosos procesos de purificaciòn del agua, los productos
-                  Oasis no tienen sabor y garantizan tu hidrataciòn.
+                  Gracias a los rigurosos procesos de purificacion del agua, los productos
+                  Oasis no tienen sabor y garantizan tu hidratacion.
                   </p>
                   <p class="text-center cta-link-wrap-button snipcss0-7-494-497">
                     <a class="button primary js-track-link-event snipcss0-8-497-498">
@@ -749,7 +722,7 @@ function App() {
     animate={ inView ? { y: -100, opacity: 1} : {y:0, opacity: 1}}
     transition={{duration: 0.8}}
     >
-    <div d='#Social'class="frame mt-20 -mb-20 frame-default frame-type-list frame-layout-0 in-view snipcss0-3-217-500">
+    <div id='Social' class="frame mt-20 -mb-20 scroll-mt-[12rem]  lg:scroll-mt-[10rem] frame-default frame-type-list frame-layout-0 in-view snipcss0-3-217-500">
       <div class="tx-pb-social snipcss0-4-500-501">
         <section class="social-wall-module in-view snipcss0-5-501-502">
           <div class="container snipcss0-6-502-503">
@@ -767,7 +740,7 @@ function App() {
                 <span class="social-icon instagram-icon snipcss0-3-31-32">
                 </span>
                   <div class="social-overlay  d-none d-xl-flex border flex-column justify-content-center align-items-center">
-                    <a class="button primary js-track-link-event vl-modal-open" data-fancybox="" href="#social-wall-modal" data-modal="true" data-index="0">
+                    <a href="https://www.instagram.com/oasis.ven" target="_blank" class="button primary js-track-link-event vl-modal-open" >
                       <span class="slickGoTo button-text">
                         Ver mas
                         <span class="btn-arrow">
@@ -780,7 +753,7 @@ function App() {
                 <span class="social-icon instagram-icon snipcss0-3-31-32">
                 </span>
                   <div class="social-overlay d-none d-xl-flex flex-column justify-content-center align-items-center ">
-                    <a class="button primary js-track-link-event vl-modal-open" data-index="1">
+                    <a href="https://www.instagram.com/oasis.ven" target="_blank" class="button primary js-track-link-event vl-modal-open" >
                       <span class="slickGoTo button-text">
                         Ver mas
                         <span class="btn-arrow">
@@ -793,7 +766,7 @@ function App() {
                 <span class="social-icon instagram-icon snipcss0-3-31-32">
                 </span>
                   <div class="social-overlay d-none d-xl-flex flex-column justify-content-center align-items-center">
-                    <a class="button primary js-track-link-event vl-modal-open" data-fancybox="" href="#social-wall-modal" data-modal="true" data-index="2">
+                    <a href="https://www.instagram.com/oasis.ven" target="_blank"  class="button primary js-track-link-event vl-modal-open" >
                       <span class="slickGoTo button-text">
                         Ver mas
                         <span class="btn-arrow">
@@ -806,7 +779,7 @@ function App() {
                 <span class="social-icon  rounded-full instagram-icon snipcss0-3-31-32">
                 </span>
                   <div class="social-overlay d-none d-xl-flex flex-column justify-content-center align-items-center">
-                    <a class="button primary js-track-link-event vl-modal-open" data-fancybox="" href="#social-wall-modal" data-modal="true" data-index="3">
+                    <a href="https://www.instagram.com/oasis.ven" target="_blank" class="button primary js-track-link-event vl-modal-open" >
                       <span class="slickGoTo button-text">
                         Ver mas
                         <span class="btn-arrow">
@@ -819,7 +792,7 @@ function App() {
                 <span class="social-icon instagram-icon snipcss0-3-31-32">
                 </span>
                   <div class="social-overlay d-none d-xl-flex flex-column justify-content-center align-items-center">
-                    <a class="button primary js-track-link-event vl-modal-open" data-fancybox="" href="#social-wall-modal" data-modal="true" data-index="4">
+                    <a href="https://www.instagram.com/oasis.ven" target="_blank" class="button primary js-track-link-event vl-modal-open" >
                       <span class="slickGoTo button-text">
                         Ver mas
                         <span class="btn-arrow">
@@ -834,7 +807,7 @@ function App() {
              
              <a href="https://www.instagram.com/oasis.ven" target="_blank" class="button primary mt-4js-track-link-event snipcss0-8-504-540">
                 <span class="button-text snipcss0-9-540-541">
-                  To Instagram
+                  Ir a Instagram
                   <span class="btn-arrow snipcss0-10-541-542">
                   </span>
                 </span>
@@ -940,15 +913,10 @@ function App() {
               <li class="nav-item">
               
                 <a href="tel:08004580366">
-                  (VEN) 0412-1968978
+                  (VEN) 0412-2030851
                 </a>
               </li>
-              <li class="nav-item">
-                
-                <a href="tel:1800949993">
-                  (VEN) 0295-2628567
-                </a>
-              </li>
+           
               <li class="nav-item">
                 Lunes a Viernes 8am - 5pm
               </li>
@@ -965,12 +933,12 @@ function App() {
                 © Oasis 2024
               </li>
               <li class="nav-item">
-                <a href="#NuestrosProductos">
+                <a href="#Productos">
                   Productos
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/#About">
+                <a href="#About">
                   Sobre Nosotros
                 </a>
               </li>
@@ -980,7 +948,7 @@ function App() {
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#Contacto" >
+                <a href="#Contact" >
                   Contacto
                 </a>
               </li>
@@ -994,14 +962,18 @@ function App() {
           </div>
         
           <div class="footer-col mr-[5%] max-[768px]:-ml-[4.5%] col-lg-4 additional-information">
-            <p className='!text-gray-70 text-center !text-xl'> 
-              Oasis Ven es una marca patentada en la Isla de Margarita.
-              <br></br><br />
-              Para los que toman el verdadero desafio! Llenarte de vida, nunca fue tan facil...
+            <p className='!text-gray-70 !text-center !text-xl'> 
+              Oasis Agua & Hielo, Hecho en la isla de margarita
+              Llenarte de vida es simple, Hidratate!
+   
+              
             </p>
+          
           </div>
+      
         </div>
       </div>
+  
     </footer>
 
 

@@ -6,6 +6,9 @@
 html {
   scroll-behavior: smooth;
 }
+.image-container {
+  object-fit: contain;
+}
 
 @media all{     
     body {  
