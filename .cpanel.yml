@@ -1,6 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/y49k0d6pfb3f/repositories/OasisGit
-    - /bin/cp index.html $DEPLOYPATH
-    - /bin/cp index.css $DEPLOYPATH
+    - export DEPLOYPATH=/home/y49k0d6pfb3f/public_html/
+    - /bin/cp index.html $DEPLOYPATH 
+    - /bin/cp index.css $DEPLOYPATH 
