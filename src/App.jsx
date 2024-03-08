@@ -19,6 +19,7 @@ import eventos1 from './assets/eventos1.jpg'
 import eventos2 from './assets/eventos2.jpg'
 import eventos3 from './assets/eventos3.jpg'
 import eventos4 from './assets/eventos4.jpg'
+import bannerMobileImg from './assets/Oasis5.jpeg'
 
 
 // Librerias
@@ -61,6 +62,9 @@ const CarouselContainer = styled.div`
   position: relative;
   height: 58px;
   margin-bottom: 40%;
+  @media screen and (max-width: 768px) {
+  display: none; 
+}
 `;
 
 const CarouselWrapper = styled(Slider)`
@@ -130,9 +134,9 @@ const CarouselWrapper = styled(Slider)`
       top: -31%;
     }
     @media screen and (max-width: 768px) {
-      object-fit: cover;
       width: 768px;
       height: 700px;
+      display: none;
     }
     @media screen and (max-width: 600px) {
       top: -34%;
@@ -190,6 +194,87 @@ const DotsContainer = styled.div`
   }
 `
 
+
+
+const CarouselContainer2 = styled.div`
+  position: relative;
+  height: 58px;
+  margin-bottom: 40%;
+  @media screen and (min-width: 768px) {
+    display: none; 
+  }
+`;
+
+const CarouselWrapper2 = styled(Slider)`
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  .slick-dots li button:before {
+    color: #fff;
+    opacity: 0;
+    font-size: 1.5rem;
+  }
+  
+  .slick-dots li.slick-active button:before {
+    opacity: 0;
+  }
+
+  .slick-prev, .slick-next {
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    opacity:0;
+
+    &:hover {
+      color: #ff6b6b;
+    }
+  }
+
+  .slick-prev {
+    left: 2rem;
+  }
+
+  .slick-next {
+    right: 2rem;
+  }
+
+  .slick-slide {
+    position: relative;
+    overflow: hidden;
+    perspective: 200px;
+    transition: transform 0.7s;
+  }
+
+ 
+
+  .slick-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit:contain;
+    position: relative;
+    
+    transition: all 0.5s ease;
+   
+    @media screen and (max-width: 768px) {
+      width: 768px;  
+    }
+   
+    @media screen and (max-width: 430px) {
+      top: -15%;
+      width: 430px;
+      height: 700px;
+    }
+  
+  }
+`;
 
 
 
@@ -365,7 +450,7 @@ function App() {
 
   <div class="page-content snipcss0-2-2-217">
 
-    {/* BANNER */}
+    {/* BANNER DESKTOP */}
     <animated.div id='Home' className='scroll-mt-[8rem]' style={animatedStyle1}>
     <CarouselContainer>
       <CarouselWrapper {...settings}>
@@ -384,6 +469,25 @@ function App() {
     </CarouselContainer>
     </animated.div>
 
+    {/* BANNER MOBILE */}
+    <animated.div id='Home' className='scroll-mt-[8rem]' style={animatedStyle1}>
+    <CarouselContainer2>
+      <CarouselWrapper2 {...settings}>
+        <div className='h-[530px] ' >
+        <img src={bannerMobileImg} alt="banner-img-1" />
+        </div>
+
+        <div className='h-[530px]' >
+        <img src={bannerMobileImg} alt="banner-img-2" />
+        </div>
+
+        <div className='h-[530px]' >
+        <img  src={bannerMobileImg} alt="banner-img-3" />
+        </div>
+      </CarouselWrapper2>
+    </CarouselContainer2>
+    </animated.div>
+
     {/* NUESTROS PRODUCTOS */}
 
     <div id="Productos" class="frame scroll-mt-[8rem] lg:scroll-mt-[16rem] frame-default frame-type-list frame-layout-0 frame-space-after-large in-view snipcss0-3-217-337">
@@ -399,7 +503,7 @@ function App() {
       <div class="container snipcss0-4-491-492">
         <div class="row snipcss0-5-492-493">
           <div class="col-12 col-sm-10 col-xxl-12 snipcss0-6-493-494">
-            <h2 class="text-center w-[110%] -ml-[5%] text-[#005c99] mt-48 lg:-mt-[40%] md:-mt-[30%] min-[1500px]:-mt-[40%]  headline snipcss0-7-494-495 mb-10 text-5xl">
+            <h2 class="text-center w-[110%] -ml-[5%] text-[#005c99] mt-56 lg:-mt-[40%] md:-mt-[30%] min-[1500px]:-mt-[40%]  headline snipcss0-7-494-495 mb-10 text-4xl">
             LLENARTE DE VIDA ES SIMPLE <br /> 
             HIDRATATE CON OASIS
             </h2>
