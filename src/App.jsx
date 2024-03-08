@@ -505,7 +505,7 @@ function App() {
           <div class="col-12 col-sm-10 col-xxl-12 snipcss0-6-493-494">
             <h2 class="text-center w-[110%] -ml-[5%] text-[#005c99] mt-56 lg:-mt-[40%] md:-mt-[30%] min-[1500px]:-mt-[40%]  headline snipcss0-7-494-495 mb-10 text-4xl">
             LLENARTE DE VIDA ES SIMPLE <br /> 
-            HIDRATATE CON OASIS
+            HIDRÁTATE CON OASIS
             </h2>
             <InView threshold={0.25}>
             {({ref, inView})=>(
