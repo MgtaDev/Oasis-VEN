@@ -1,39 +1,36 @@
 // Basics
 import React from 'react';
-import './App.css'
+import './App.css';
 
 
 // Imagenes
-import oasisLogo from './assets/OasisLogo.jpeg'
-import oasisBanner from './assets/Oasis5.jpeg'
-import WhatsappIcon from './assets/social.png'
-import banner1 from './assets/banner1.png'
-import banner2 from './assets/Banner2.png'
-import banner3 from './assets/Banner3.png'
-import eventos5 from './assets/eventos5.jpg'
-import bottleImg1l from './assets/Botella1L.png'
-import bottleImg5l from './assets/Botella5L.png'
-import bottleImg330ml from './assets/Botella330ml.png'
-import bottleImg600ml from './assets/Botella600ml.png'
-import eventos1 from './assets/eventos1.jpg'
-import eventos2 from './assets/eventos2.jpg'
-import eventos3 from './assets/eventos3.jpg'
-import eventos4 from './assets/eventos4.jpg'
-import bannerMobileImg from './assets/Oasis5.jpeg'
+import banner2 from './assets/Banner2.png';
+import banner3 from './assets/Banner3.png';
+import bottleImg1l from './assets/Botella1L.png';
+import bottleImg330ml from './assets/Botella330ml.png';
+import bottleImg5l from './assets/Botella5L.png';
+import bottleImg600ml from './assets/Botella600ml.png';
+import { default as bannerMobileImg, default as oasisBanner } from './assets/Oasis5.jpeg';
+import oasisLogo from './assets/OasisLogo.jpeg';
+import banner1 from './assets/banner1.png';
+import eventos1 from './assets/eventos1.jpg';
+import eventos3 from './assets/eventos3.jpg';
+import eventos5 from './assets/eventos5.jpg';
+import WhatsappIcon from './assets/social.png';
 
 
 // Librerias
-import "slick-carousel/slick/slick-theme.css";
-import styled from 'styled-components';
-import { useSpring, animated } from "react-spring";
-import { InView, useInView } from 'react-intersection-observer';
-import { inView, motion } from "framer-motion" 
-import "react-responsive-carousel/lib/styles/carousel.min.css"; 
-import { Carousel } from 'react-responsive-carousel';
-import { stack as Menu } from 'react-burger-menu'
+import { motion } from "framer-motion";
+import { stack as Menu } from 'react-burger-menu';
 import ReactCardSlider from 'react-card-slider-component';
+import { InView, useInView } from 'react-intersection-observer';
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Slider from 'react-slick';
+import { animated, useSpring } from "react-spring";
+import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
+import styled from 'styled-components';
 
 const slides = [
   {
@@ -499,14 +496,12 @@ function App() {
               </div>
               
         {/* Contenido del div */}
+        
         <section class="text in-view snipcss0-3-217-491">
       <div class="container snipcss0-4-491-492">
         <div class="row snipcss0-5-492-493">
           <div class="col-12 col-sm-10 col-xxl-12 snipcss0-6-493-494">
-            <h2 class="text-center w-[110%] -ml-[5%] text-[#005c99] mt-56 lg:-mt-[40%] md:-mt-[30%] min-[1500px]:-mt-[40%]  headline snipcss0-7-494-495 mb-10 text-4xl">
-            LLENARTE DE VIDA ES SIMPLE <br /> 
-            HIDRÁTATE CON OASIS
-            </h2>
+           
             <InView threshold={0.25}>
             {({ref, inView})=>(
             <motion.div 
@@ -516,24 +511,28 @@ function App() {
             transition={{duration: 0.8}}
             id=''
             >
+            <h2 class="text-center w-[110%] -ml-[5%] min-[1300px]:mt-[-50%] min-[1600px]:mt-[-70%] text-[#005c99] mt-56 lg:-mt-[40%] md:-mt-[30%] min-[1500px]:-mt-[40%]  headline snipcss0-7-494-495 mb-10 text-4xl">
+            LLENARTE DE VIDA ES SIMPLE <br /> 
+            HIDRÁTATE CON OASIS
+            </h2>
            <Carousel
            showArrows={false}
            className='max-[420px]:h-[500px] text-center max-[420px]:mb-[60%] mb-[25%]'>
                 <div>
                     <img src={bottleImg1l}  />
-                    <p className="legend">Agua minereal 1l</p>
+                    <p className="legend">Agua purificada 1l</p>
                 </div>
                 <div>
                     <img src={bottleImg5l} />
-                    <p className="legend">Agua minereal 5l</p>
+                    <p className="legend">Agua purificada 5l</p>
                 </div>
                 <div>
                     <img src={bottleImg600ml} />
-                    <p className="legend">Agua mineral 600ml</p>
+                    <p className="legend">Agua purificada 600ml</p>
                 </div>
                 <div>
                     <img src={bottleImg330ml} />
-                    <p className="legend">Agua mineral 330ml</p>
+                    <p className="legend">Agua purificada 330ml</p>
                 </div>
             </Carousel>
             <InView threshold={0.25}>
@@ -543,6 +542,9 @@ function App() {
             initial={{ y: 0, opacity: 0 }}
             animate={ inView ? { y: -100, opacity: 1} : {y: 0}}
             transition={{duration: 0.8}}
+            viewport={{
+              once: true,
+            }}
             id=''
             >
             <div className='text-center px-4 py-8 rounded-sm'>
@@ -568,6 +570,7 @@ function App() {
         </div>
       </div>
         </section>
+        
               
 
     </div>
@@ -585,9 +588,12 @@ function App() {
     initial={{ y: 0, opacity: 0 }}
     animate={ inView ? { y: -100, opacity: 1} : {y:0}}
     transition={{duration: 0.8}}
+    viewport={{
+      once: true,
+    }}
     id=''
     >
-    <section id='About' class="image-text -mt-[10%]  scroll-mt-[10rem] lg:scroll-mt-[10rem]  snipcss0-3-217-357">
+    <section id='About' class="image-text -mt-[10%]  scroll-mt-[4rem] lg:scroll-mt-[10rem]  snipcss0-3-217-357">
       <div class="container snipcss0-4-357-358">
         <div class="row snipcss0-5-358-359">
           <div class="col-12 col-sm-10 col-xxl-12 snipcss0-6-359-360">
@@ -604,6 +610,9 @@ function App() {
                 initial={{ x: -100, opacity: 0 }}
                 animate={ inView ? { x: 0, opacity: 1} : {x:-100}}
                 transition={{duration: 0.8}}
+                viewport={{
+                  once: true,
+                }}
                 id=''
                 >
                   <h3 class="text-5xl text-[#005c99] max-[480px]:text-4xl max-[480px]:-mt-[8%] max-[430px]:-mt-[2%] max-[420px]:text-center headline snipcss0-8-380-381">
@@ -620,26 +629,22 @@ function App() {
                 initial={{ y: 0, opacity: 0 }}
                 animate={ inView ? { y: -100, opacity: 1} : {y:0}}
                 transition={{duration: 0.8}}
+                viewport={{
+                  once: true,
+                }}
                 id=''
                 >
-                  <div className='mt-[30%]'>
+                  <div className='mt-[30%] max-[1024px]:mt-[40%]'>
                   <p class="snipcss0-10-365-367">
-                  ¡La prioridad es tu bienestar! En Oasis abrazamos la posibilidad de acompañarte
-                  a sacar tu maximo potencial, inspirandote a vivir nuevas experiencias y cultivar
-                  un estilo de vida cada vez mas saludable, siempre cuidando tu cuerpo con la
-                  hidratacion perfecta.
+                  ¡La prioridad es tu bienestar! En Oasis abrazamos la posibilidad de acompañarte a sacar tu máximo potencial, inspirándote a vivir nuevas experiencias y cultivar un estilo de vida cada vez más saludable, siempre cuidando tu cuerpo con la hidratación perfecta.
+
                   </p>
                   <p class="snipcss0-10-365-368">
-                  ¡Atrevete a vivir eso que tanto sueñas! Nosotros soñamos con extraer, purificar, y
-                  producir agua desde la Isla de Margarita para toda Venezuela, y hoy es una gran
-                  realidad la presencia de Oasis agua & hielo en las rutinas y entrenamientos de
-                  miles de atletas.
+                  ¡Atrévete a vivir eso que tanto sueñas! Nosotros soñamos con extraer, purificar, y producir agua desde la Isla de Margarita para toda Venezuela, y hoy es una gran realidad la presencia de Oasis agua & hielo en las rutinas y entrenamientos de miles de atletas.
+
                   </p>
                   <p class="snipcss0-10-365-369">
-                  Tambien estamos en las fotos de tus vacaciones, paseos, dias de playa, piscina o
-                  montaña con familiares y amigos, por que el packing y la imagen de las botellas
-                  Oasis es 100% atrevido, divertido e inspirador. Reutilìzalas, conservalas y
-                  desechalas en el lugar adecuado ¡Gracias!
+                  También estamos en las fotos de tus vacaciones, paseos, días de playa, piscina o montaña con familiares y amigos, porque el packing y la imagen de las botellas Oasis es 100% atrevido, divertido e inspirador. Reutilízalas, consérvalas o deséchalas en el lugar adecuado ¡Gracias!
                   </p>
                  
                   </div>
@@ -667,6 +672,7 @@ function App() {
     initial={{ y: 0, opacity: 0 }}
     animate={ inView ? { y: -100, opacity: 1} : {y:0}}
     transition={{duration: 0.8}}
+    
     >
     <section class="text in-view snipcss0-3-217-370">
       <div class="container snipcss0-4-370-371">
@@ -698,7 +704,7 @@ function App() {
                 id=''
                 >
                 <p class="text-center text-3xl text-gray-600 snipcss0-7-373-375">
-               Para los que toman el verdadero desafio! Llenarte de vida, nunca fue tan facil...
+                Para los que toman el verdadero desafío! Llenarte de vida, nunca fue tan fácil...
                 </p>
               </motion.div>  
                 )}
@@ -721,6 +727,10 @@ function App() {
     initial={{ x: -100, opacity: 0 }}
     animate={ inView ? { x: 0, opacity: 1} : {x:-100}}
     transition={{duration: 0.8}}
+    viewport={{
+      once: true,
+    }}
+    
     >
     <section id='Eventos' class="product-slider scroll-mt-[2rem] md:scroll-mt-[8rem]  in-view snipcss0-3-217-376">
       <div class="container container-wide snipcss0-4-376-377">
@@ -760,6 +770,9 @@ function App() {
                 initial={{ x: -100, opacity: 0 }}
                 animate={ inView ? { x: 0, opacity: 1} : {x:-100}}
                 transition={{duration: 0.8}}
+                viewport={{
+                  once: true,
+                }}
                 id=''
                 >
     <section id='Contact' class="text scroll-mt-[4rem] in-view snipcss0-3-217-491">
@@ -773,10 +786,13 @@ function App() {
                 initial={{ x: -100, opacity: 0 }}
                 animate={ inView ? { x: 0, opacity: 1} : {x:0}}
                 transition={{duration: 0.8}}
+                viewport={{
+                  once: true,
+                }}
                 id=''
                 >
             <h2 class="text-center text-[#005c99]  snipcss0-7-494-495 text-5xl max-[480px]:text-4xl mb-10">
-            PRODUCTOS CON CALIDAD DE FABRICACION PLASCAN <br /><br /> Oasis Agua & Hielo
+            PRODUCTOS CON CALIDAD DE FABRICACIÓN PLASCAN <br /><br /> Oasis Agua & Hielo
             </h2>
             </motion.div>
           )}
@@ -788,20 +804,19 @@ function App() {
                 initial={{ y: 0, opacity: 0 }}
                 animate={ inView ? { y: -100, opacity: 1} : {y:0}}
                 transition={{duration: 0.8}}
+                viewport={{
+                  once: true,
+                }}
                 id=''
                 >
                   <div className='max-[480px]:mt-[35%] max-[768px]:mt-[25%] max-[1024px]:mt-[20%] mt-[13%]'>
                   <p class="text-center text-2xl text-gray-600 snipcss0-7-494-496">
-                  Los productos Oasis (agua - hielo) son una inmersión de frescura, 100%
-                  naturales, fabricados por Plascan en la Isla de Margarita, con agua
-                  extraída de pozos profundos, ubicados en El Valle del Espíritu Santo.
-                  Gracias a los rigurosos procesos de purificacion del agua, los productos
-                  Oasis no tienen sabor y garantizan tu hidratacion.
+                  Los productos Oasis (agua - hielo) son una inmersión de frescura, 100% naturales, fabricados por Plascan en la Isla de Margarita, con agua extraída de pozos profundos, ubicados en El Valle del Espíritu Santo. Gracias a los rigurosos procesos de purificación del agua, los productos Oasis no tienen sabor y garantizan tu hidratación.
                   </p>
                   <p class="text-center cta-link-wrap-button snipcss0-7-494-497">
                     <a class="button primary js-track-link-event snipcss0-8-497-498">
                       <span class="button-text snipcss0-9-498-499">
-                        Contactanos
+                      Contáctanos
                       </span>
                     </a>
                   </p>
@@ -822,14 +837,7 @@ function App() {
    
 
     {/* SOCIAL WALL */}
-    <InView threshold={0.25}>
-    {({ref, inView})=>(
-    <motion.div 
-    ref={ref}
-    initial={{ y: 0, opacity: 0 }}
-    animate={ inView ? { y: -100, opacity: 1} : {y:0, opacity: 1}}
-    transition={{duration: 0.8}}
-    >
+  
     <div id='Social' class="frame mt-20 -mb-20 scroll-mt-[12rem]  lg:scroll-mt-[10rem] frame-default frame-type-list frame-layout-0 in-view snipcss0-3-217-500">
       <div class="tx-pb-social snipcss0-4-500-501">
         <section class="social-wall-module in-view snipcss0-5-501-502">
@@ -841,7 +849,7 @@ function App() {
                     Social Wall
                   </h2>
                 </div>
-                <p className='!text-gray-500 max-[420px]:!text-md !text-3xl'>Quieres saber mas? Siguenos en nuestras redes sociales! #OasisVen</p>
+                <p className='!text-gray-500 max-[420px]:!text-md !text-3xl'>¿Quieres saber más? Síguenos en nuestras redes sociales! @oasis.ven</p>
                 <div class="row pb-list social-wall-grid">
                 {/* Social Images */}
                 <div class="social-teaser background-img4 social-teaser-big style-RRKvC" goto="0" data-src="#social-wall-modal" data-modal="true" data-image="./assets/Oasis5.jpeg" data-index="0" id="style-RRKvC">
@@ -913,7 +921,7 @@ function App() {
                
               </div>
              
-             <a href="https://www.instagram.com/oasis.ven" target="_blank" class="button primary mt-4js-track-link-event snipcss0-8-504-540">
+             <a href="https://www.instagram.com/oasis.ven" target="_blank" class="button  primary mt-4js-track-link-event snipcss0-8-504-540">
                 <span class="button-text snipcss0-9-540-541">
                   Ir a Instagram
                   <span class="btn-arrow snipcss0-10-541-542">
@@ -926,10 +934,7 @@ function App() {
       </div>
       
     </div>
-    </motion.div>
-    )}
    
-    </InView>
    
     </div>
 
@@ -1071,10 +1076,7 @@ function App() {
         
           <div class="footer-col mr-[5%] max-[768px]:-ml-[4.5%] col-lg-4 additional-information">
             <p className='!text-gray-70 !text-center !text-xl'> 
-              Oasis Agua & Hielo, Hecho en la isla de margarita
-              Llenarte de vida es simple, Hidratate!
-   
-              
+            Oasis Agua & Hielo. Hecho en la Isla de Margarita.  Llenarte de vida es simple, ¡Hidrátate! 
             </p>
           
           </div>
