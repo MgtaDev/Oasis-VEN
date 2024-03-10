@@ -502,15 +502,7 @@ function App() {
         <div class="row snipcss0-5-492-493">
           <div class="col-12 col-sm-10 col-xxl-12 snipcss0-6-493-494">
            
-            <InView threshold={0.25}>
-            {({ref, inView})=>(
-            <motion.div 
-            ref={ref}
-            initial={{ x: -100, opacity: 0 }}
-            animate={ inView ? { x: 0, opacity: 1} : {x:-100}}
-            transition={{duration: 0.8}}
-            id=''
-            >
+           
             <h2 class="text-center w-[110%] -ml-[5%] min-[1300px]:mt-[-50%] min-[1600px]:mt-[-70%] text-[#005c99] mt-56 lg:-mt-[40%] md:-mt-[30%] min-[1500px]:-mt-[40%]  headline snipcss0-7-494-495 mb-10 text-4xl">
             LLENARTE DE VIDA ES SIMPLE <br /> 
             HIDRÁTATE CON OASIS
@@ -560,11 +552,7 @@ function App() {
             </motion.div>
             )}
             </InView>             
-          
-            </motion.div>
-            )}
-            </InView>
-           
+        
             
           </div>
         </div>
