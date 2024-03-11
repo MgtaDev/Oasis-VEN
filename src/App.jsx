@@ -1,5 +1,5 @@
 // Basics
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 
 
@@ -275,6 +275,7 @@ const CarouselWrapper2 = styled(Slider)`
 
 
 
+
 function App() {
   const sendWhatsappMessage = () => {
     window.open("https://wa.me/584122030851", "_blank")
@@ -349,6 +350,38 @@ function App() {
       to: { opacity: 1, },
       delay: 500,
     });
+
+    const [text, setText] = useState("");
+    const [isForwardTyping, setIsForwardTyping] = useState(true);
+    const landingText = "LLENARTE DE VIDA ES SIMPLE! HIDRÁTATE CON OASIS"
+    const typingSpeed = 230; // milisegundos
+
+    useEffect(() => {
+      let currentIndex = 0;
+      let reverseIndex = landingText.length - 1;
+      let intervalId;
+
+      intervalId = setInterval(() => {
+        if (isForwardTyping) {
+          setText(landingText.substring(0, currentIndex) + landingText[currentIndex]);
+          currentIndex++;
+
+          if (currentIndex >= landingText.length) {
+            setIsForwardTyping(false);
+          }
+        } else {
+          setText(landingText.substring(0, reverseIndex) + landingText[reverseIndex]);
+          reverseIndex--;
+
+          if (reverseIndex < 0) {
+            setIsForwardTyping(true);
+          }
+        }
+      }, typingSpeed);
+
+      return () => clearInterval(intervalId);
+    }, [isForwardTyping]);
+
 
 
     
@@ -503,9 +536,8 @@ function App() {
           <div class="col-12 col-sm-10 col-xxl-12 snipcss0-6-493-494">
            
            
-            <h2 class="text-center w-[110%] -ml-[5%] min-[1300px]:mt-[-50%] min-[1600px]:mt-[-70%] text-[#005c99] mt-56 lg:-mt-[40%] md:-mt-[30%] min-[1500px]:-mt-[40%]  headline snipcss0-7-494-495 mb-10 text-4xl">
-            LLENARTE DE VIDA ES SIMPLE <br /> 
-            HIDRÁTATE CON OASIS
+            <h2 class="text-center w-[110%] -ml-[5%] min-[1300px]:mt-[-50%] min-[1600px]:mt-[-70%] text-[#005c99] mt-56 lg:-mt-[40%] md:-mt-[30%] min-[1500px]:-mt-[40%]  headline snipcss0-7-494-495 mb-10 text-5xl">
+            {text}
             </h2>
            <Carousel
            showArrows={false}
@@ -544,7 +576,7 @@ function App() {
                OASIS AGUA & HIELO
             </h3>
            <a class="button primary snipcss0-14-348-355" tabindex="0">
-                <span class="button-text snipcss0-15-355-356">
+                <span onClick={()=>sendWhatsappMessage()} class="button-text snipcss0-15-355-356">
                   Compra ya!
                 </span>
             </a>
@@ -581,7 +613,7 @@ function App() {
     }}
     id=''
     >
-    <section id='About' class="image-text -mt-[10%]  scroll-mt-[4rem] lg:scroll-mt-[10rem]  snipcss0-3-217-357">
+    <section id='About' class="image-text -mt-[10%] min-[1300px]:mt-0 min-[1600px]:mt-0 scroll-mt-[4rem] lg:scroll-mt-[10rem]  snipcss0-3-217-357">
       <div class="container snipcss0-4-357-358">
         <div class="row snipcss0-5-358-359">
           <div class="col-12 col-sm-10 col-xxl-12 snipcss0-6-359-360">
@@ -603,9 +635,9 @@ function App() {
                 }}
                 id=''
                 >
-                  <h3 class="text-5xl text-[#005c99] max-[480px]:text-4xl max-[480px]:-mt-[8%] max-[430px]:-mt-[2%] max-[420px]:text-center headline snipcss0-8-380-381">
+                  <h2 class="text-5xl min-[1300px]: min-[1600px]: text-[#005c99] max-[480px]:-mt-[8%] max-[430px]:-mt-[0%] max-[420px]:text-center headline snipcss0-8-380-381">
                   DESAFÍA TUS LIMITES CUIDANDO AL MÁXIMO TU CUERPO
-                  </h3>  
+                  </h2>  
               </motion.div>  
                 )}
               </InView>
@@ -622,16 +654,16 @@ function App() {
                 }}
                 id=''
                 >
-                  <div className='mt-[30%] max-[1024px]:mt-[40%]'>
-                  <p class="snipcss0-10-365-367">
+                  <div className='mt-[30%] min-[1300px]:mt-[20%] min-[1600px]:mt-[20%]  max-[430px]:mt-[30%]  max-[1024px]:mt-[40%]'>
+                  <p class="snipcss0-10-365-367 text-2xl text-gray-600">
                   ¡La prioridad es tu bienestar! En Oasis abrazamos la posibilidad de acompañarte a sacar tu máximo potencial, inspirándote a vivir nuevas experiencias y cultivar un estilo de vida cada vez más saludable, siempre cuidando tu cuerpo con la hidratación perfecta.
 
                   </p>
-                  <p class="snipcss0-10-365-368">
+                  <p class="snipcss0-10-365-368 text-2xl text-gray-600">
                   ¡Atrévete a vivir eso que tanto sueñas! Nosotros soñamos con extraer, purificar, y producir agua desde la Isla de Margarita para toda Venezuela, y hoy es una gran realidad la presencia de Oasis agua & hielo en las rutinas y entrenamientos de miles de atletas.
 
                   </p>
-                  <p class="snipcss0-10-365-369">
+                  <p class="snipcss0-10-365-369 text-2xl text-gray-600">
                   También estamos en las fotos de tus vacaciones, paseos, días de playa, piscina o montaña con familiares y amigos, porque el packing y la imagen de las botellas Oasis es 100% atrevido, divertido e inspirador. Reutilízalas, consérvalas o deséchalas en el lugar adecuado ¡Gracias!
                   </p>
                  
@@ -779,7 +811,7 @@ function App() {
                 }}
                 id=''
                 >
-            <h2 class="text-center text-[#005c99]  snipcss0-7-494-495 text-5xl max-[480px]:text-4xl mb-10">
+            <h2 class="text-center text-[#005c99]  snipcss0-7-494-495 text-5xl max-[480px]:text-5xl mb-10">
             PRODUCTOS CON CALIDAD DE FABRICACIÓN PLASCAN <br /><br /> Oasis Agua & Hielo
             </h2>
             </motion.div>
@@ -803,7 +835,7 @@ function App() {
                   </p>
                   <p class="text-center cta-link-wrap-button snipcss0-7-494-497">
                     <a class="button primary js-track-link-event snipcss0-8-497-498">
-                      <span class="button-text snipcss0-9-498-499">
+                      <span class=" button-text snipcss0-9-498-499">
                       Contáctanos
                       </span>
                     </a>
@@ -825,7 +857,6 @@ function App() {
    
 
     {/* SOCIAL WALL */}
-  
     <div id='Social' class="frame mt-20 -mb-20 scroll-mt-[12rem]  lg:scroll-mt-[10rem] frame-default frame-type-list frame-layout-0 in-view snipcss0-3-217-500">
       <div class="tx-pb-social snipcss0-4-500-501">
         <section class="social-wall-module in-view snipcss0-5-501-502">
@@ -851,7 +882,7 @@ function App() {
                         </span>
                       </span>
                     </a>
-                  </div>
+                  </div> 
                 </div>
                 <div class="social-teaser background-img2  style-BD1dS" goto="1" data-src="#social-wall-modal" data-modal="true"  data-index="1" id="style-BD1dS">
                 <span class="social-icon instagram-icon snipcss0-3-31-32">
@@ -910,7 +941,7 @@ function App() {
               </div>
              
              <a href="https://www.instagram.com/oasis.ven" target="_blank" class="button  primary mt-4js-track-link-event snipcss0-8-504-540">
-                <span class="button-text snipcss0-9-540-541">
+                <span class=" button-text snipcss0-9-540-541">
                   Ir a Instagram
                   <span class="btn-arrow snipcss0-10-541-542">
                   </span>

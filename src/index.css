@@ -1062,7 +1062,7 @@ html {
     } 
   
     .site-footer a  { 
-      color: #005c99; 
+      color: #606060; 
       font-size: 18px; 
       line-height: 27px;
     } 
@@ -1228,7 +1228,7 @@ html {
   
   @media all{ 
     .slick-slider .slick-dots li.slick-active  { 
-      background: #005c99;
+      background: #dce5ea;
     } 
   
     .stage-slider .slider-stage .slick-dots li.slick-active  { 
@@ -1823,7 +1823,7 @@ html {
       padding: 0; 
       transition: all 0.2s ease; 
       border: 0; 
-      background: #005c99; 
+      background: #ffffff; 
       outline: none; 
       font-size: 0; 
       line-height: 0;
