@@ -763,8 +763,8 @@ function App() {
               </p>
               <p class="text-left ml-8 max-[480px]:ml-0 cta-link-wrap-button snipcss0-8-380-383">
                 <a href="/products" class="button primary js-track-link-event snipcss0-9-383-384">
-                  <span class="button-text snipcss0-10-384-385">
-                    Ver mas
+                  <span onClick={()=> sendWhatsappMessage()} class="button-text snipcss0-10-384-385">
+                    Participa!
                   </span>
                 </a>
               </p>
@@ -833,7 +833,7 @@ function App() {
                   </p>
                   <p class="text-center cta-link-wrap-button snipcss0-7-494-497">
                     <a class="button primary js-track-link-event snipcss0-8-497-498">
-                      <span class=" button-text snipcss0-9-498-499">
+                      <span onClick={()=> sendWhatsappMessage()} class=" button-text snipcss0-9-498-499">
                       Contáctanos
                       </span>
                     </a>
