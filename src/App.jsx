@@ -351,37 +351,7 @@ function App() {
       delay: 500,
     });
 
-    const [text, setText] = useState("");
-    const [isForwardTyping, setIsForwardTyping] = useState(true);
-    const landingText = "LLENARTE DE VIDA ES SIMPLE! HIDRÁTATE CON OASIS"
-    const typingSpeed = 230; // milisegundos
-
-    useEffect(() => {
-      let currentIndex = 0;
-      let reverseIndex = landingText.length - 1;
-      let intervalId;
-
-      intervalId = setInterval(() => {
-        if (isForwardTyping) {
-          setText(landingText.substring(0, currentIndex) + landingText[currentIndex]);
-          currentIndex++;
-
-          if (currentIndex >= landingText.length) {
-            setIsForwardTyping(false);
-          }
-        } else {
-          setText(landingText.substring(0, reverseIndex) + landingText[reverseIndex]);
-          reverseIndex--;
-
-          if (reverseIndex < 0) {
-            setIsForwardTyping(true);
-          }
-        }
-      }, typingSpeed);
-
-      return () => clearInterval(intervalId);
-    }, [isForwardTyping]);
-
+   
 
 
     
@@ -537,7 +507,8 @@ function App() {
            
            
             <h2 class="text-center w-[110%] -ml-[5%] min-[1300px]:mt-[-50%] min-[1600px]:mt-[-70%] text-[#005c99] mt-56 lg:-mt-[40%] md:-mt-[30%] min-[1500px]:-mt-[40%]  headline snipcss0-7-494-495 mb-10 text-5xl">
-            {text}
+            LLENARTE DE VIDA ES SIMPLE! HIDRÁTATE CON OASIS
+
             </h2>
            <Carousel
            showArrows={false}
