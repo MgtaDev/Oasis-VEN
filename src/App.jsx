@@ -4,8 +4,12 @@ import './App.css';
 
 
 // Imagenes
+import Hielo from './assets/Hielo.png'
 import banner2 from './assets/Banner2.png';
 import banner3 from './assets/Banner3.png';
+import bannerMobile1 from './assets/bannerMobile1.png'
+import bannerMobile2 from './assets/bannerMobile2.png'
+import bannerMobile3 from './assets/bannerMobile3.png'
 import bottleImg1l from './assets/Botella1L.png';
 import bottleImg330ml from './assets/Botella330ml.png';
 import bottleImg5l from './assets/Botella5L.png';
@@ -269,6 +273,25 @@ const CarouselWrapper2 = styled(Slider)`
       width: 430px;
       height: 700px;
     }
+    @media screen and (max-width: 412px) {
+      top: -20%;
+      width: 430px;
+      height: 700px;
+    }
+    @media screen and (max-width: 380px) {
+      top: -24%;
+      width: 430px;
+      height: 700px;
+    }
+    @media screen and (max-width: 350px) {
+      top: -26%;
+    }
+    @media screen and (max-width: 320px) {
+      top: -30%;
+    }
+    @media screen and (max-width: 290px) {
+      top: -33%;
+    }
   
   }
 `;
@@ -474,15 +497,15 @@ function App() {
     <CarouselContainer2>
       <CarouselWrapper2 {...settings}>
         <div className='h-[530px] ' >
-        <img src={bannerMobileImg} alt="banner-img-1" />
+        <img src={bannerMobile1} alt="banner-img-1" />
         </div>
 
         <div className='h-[530px]' >
-        <img src={bannerMobileImg} alt="banner-img-2" />
+        <img src={bannerMobile2} alt="banner-img-2" />
         </div>
 
         <div className='h-[530px]' >
-        <img  src={bannerMobileImg} alt="banner-img-3" />
+        <img  src={bannerMobile3} alt="banner-img-3" />
         </div>
       </CarouselWrapper2>
     </CarouselContainer2>
@@ -528,6 +551,10 @@ function App() {
                 <div>
                     <img src={bottleImg330ml} />
                     <p className="legend">Agua purificada 330ml</p>
+                </div>
+                <div>
+                    <img src={Hielo} />
+                    <p className="legend">Bolsa de Hielo 7Kg</p>
                 </div>
             </Carousel>
             <InView threshold={0.25}>
