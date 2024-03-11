@@ -600,7 +600,7 @@ function App() {
   
     {/*POR QUE ESCOJERNOS */}
    
-    <section id='About' class="image-text -mt-[50%] min-[1300px]:mt-0 min-[1600px]:mt-0 scroll-mt-[4rem] lg:scroll-mt-[10rem]  snipcss0-3-217-357">
+    <section id='About' class="image-text -mt-[50%] md:-mt-[15%] min-[1300px]:mt-0 min-[1600px]:mt-0 scroll-mt-[4rem] lg:scroll-mt-[10rem]  snipcss0-3-217-357">
       <div class="container snipcss0-4-357-358">
         <div class="row snipcss0-5-358-359">
           <div class="col-12 col-sm-10 col-xxl-12 snipcss0-6-359-360">
