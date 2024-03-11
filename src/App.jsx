@@ -599,19 +599,8 @@ function App() {
 
   
     {/*POR QUE ESCOJERNOS */}
-    <InView threshold={0.25}>
-    {({ref, inView})=>(
-    <motion.div 
-    ref={ref}
-    initial={{ y: 0, opacity: 0 }}
-    animate={ inView ? { y: -100, opacity: 1} : {y:0}}
-    transition={{duration: 0.8}}
-    viewport={{
-      once: true,
-    }}
-    id=''
-    >
-    <section id='About' class="image-text -mt-[10%] min-[1300px]:mt-0 min-[1600px]:mt-0 scroll-mt-[4rem] lg:scroll-mt-[10rem]  snipcss0-3-217-357">
+   
+    <section id='About' class="image-text -mt-[50%] min-[1300px]:mt-0 min-[1600px]:mt-0 scroll-mt-[4rem] lg:scroll-mt-[10rem]  snipcss0-3-217-357">
       <div class="container snipcss0-4-357-358">
         <div class="row snipcss0-5-358-359">
           <div class="col-12 col-sm-10 col-xxl-12 snipcss0-6-359-360">
@@ -633,7 +622,7 @@ function App() {
                 }}
                 id=''
                 >
-                  <h2 class="text-5xl min-[1300px]: min-[1600px]: text-[#005c99] max-[480px]:-mt-[8%] max-[430px]:-mt-[0%] max-[420px]:text-center headline snipcss0-8-380-381">
+                  <h2 class="text-5xl min-[1300px]: min-[1600px]: text-[#005c99] max-[480px]:-mt-[8%] max-[430px]:mt-[2%] max-[420px]:text-center headline snipcss0-8-380-381">
                   DESAFÍA TUS LIMITES CUIDANDO AL MÁXIMO TU CUERPO
                   </h2>  
               </motion.div>  
@@ -652,7 +641,7 @@ function App() {
                 }}
                 id=''
                 >
-                  <div className='mt-[30%] min-[1300px]:mt-[20%] min-[1600px]:mt-[20%]  max-[430px]:mt-[30%]  max-[1024px]:mt-[40%]'>
+                  <div className='mt-[30%] min-[1300px]:mt-[20%] min-[1600px]:mt-[20%]  max-[430px]:mt-[33%]  max-[1024px]:mt-[40%]'>
                   <p class="snipcss0-10-365-367 text-2xl text-gray-600">
                   ¡La prioridad es tu bienestar! En Oasis abrazamos la posibilidad de acompañarte a sacar tu máximo potencial, inspirándote a vivir nuevas experiencias y cultivar un estilo de vida cada vez más saludable, siempre cuidando tu cuerpo con la hidratación perfecta.
 
@@ -678,9 +667,7 @@ function App() {
         </div>
       </div>
     </section>
-    </motion.div>
-    )}
-    </InView>
+
     
     {/* Oasis Ven */}
     <InView threshold={0.25}>
