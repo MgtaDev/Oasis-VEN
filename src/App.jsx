@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 
-
 // Imagenes
 import Hielo from './assets/Hielo.png'
 import banner2 from './assets/Banner2.png';
